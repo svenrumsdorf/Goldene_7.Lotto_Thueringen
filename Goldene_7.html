@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flackern</title>
+  <style>
+    body {
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: black;
+    }
+    .flash {
+      animation: flash 0.1s infinite;
+    }
+    @keyframes flash {
+      0%, 100% {
+        background-color: black;
+      }
+      50% {
+        background-color: white;
+      }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    document.body.classList.add('flash');
+
+    // Flackern nach 10 Sekunden stoppen
+    setTimeout(() => {
+      document.body.classList.remove('flash');
+      document.body.style.backgroundColor = 'black';
+      alert("Flackern vorbei! 😄");
+    }, 10000);
+  </script>
+</body>
+</html>
